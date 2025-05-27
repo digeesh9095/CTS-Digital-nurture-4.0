@@ -1,0 +1,47 @@
+/* ===================================
+   Reset styles using universal selector
+   =================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ===================================
+     Element selector to style all <h2>
+     =================================== */
+  h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  /* ===================================
+     ID selector for the main banner
+     =================================== */
+  #mainHeader {
+    background-color: #1abc9c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* ===================================
+     Class selector for event containers
+     =================================== */
+  .eventCard {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+  }
+  
+  /* ===================================
+     Grouping selector for h3 and p
+     =================================== */
+  h3, p {
+    color: #34495e;
+    font-family: Arial, sans-serif;
+  }
+  

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Box Model & Layout Control</title>
+  <style>
+    /* Event card with margin, padding, border */
+    .eventCard {
+      border: 2px solid #007BFF;
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      border-radius: 8px;
+      box-sizing: border-box;
+      background-color: #f5f9ff;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Form inputs with outline on focus */
+    input[type="text"], input[type="email"] {
+      display: block;
+      width: 280px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      transition: outline 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="email"]:focus {
+      outline: 3px solid #007BFF;
+      outline-offset: 2px;
+    }
+
+    /* Compare visibility: hidden vs display: none */
+    .hiddenBox {
+      width: 100px;
+      height: 100px;
+      background-color: #ff9800;
+      margin: 10px;
+      display: inline-block;
+      text-align: center;
+      line-height: 100px;
+      color: white;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+
+    .hiddenBox.visibility-hidden {
+      visibility: hidden;
+    }
+
+    .hiddenBox.display-none {
+      display: none;
+    }
+
+    /* Container to demonstrate difference */
+    .container {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="eventCard">
+    <h3>Event: Summer Fest</h3>
+    <p>Date: July 20, 2025</p>
+    <p>Location: Beach Park</p>
+  </div>
+
+  <form>
+    <input type="text" placeholder="Name" />
+    <input type="email" placeholder="Email" />
+  </form>
+
+  <div class="container">
+    <h3>Visibility vs Display</h3>
+    <div class="hiddenBox">Normal</div>
+    <div class="hiddenBox visibility-hidden">Hidden</div>
+    <div class="hiddenBox display-none">None</div>
+  </div>
+
+</body>
+</html>
