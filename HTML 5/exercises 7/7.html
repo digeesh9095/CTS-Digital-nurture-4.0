@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Promo Video</title>
+  <style>
+    #statusMsg {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    video {
+      width: 400px;
+      border: 2px solid #333;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>You're Invited!</h2>
+  <p>Watch our event promo video:</p>
+
+  <video controls oncanplay="showMessage()">
+    <source src="promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="statusMsg"></div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("statusMsg").textContent = "Video ready to play!";
+    }
+
+    window.onbeforeunload = function () {
+      return "Are you sure you want to leave? You might miss the event info.";
+    };
+  </script>
+
+</body>
+</html>

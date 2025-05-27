@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, select, button {
+      display: block;
+      margin-bottom: 15px;
+      padding: 8px;
+      width: 250px;
+    }
+    #eventImage {
+      width: 200px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    #feeDisplay, #confirmation {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Event Feedback Form</h2>
+
+  <!-- Phone Validation on Blur -->
+  <label for="phone">Phone Number:</label>
+  <input type="text" id="phone" placeholder="Enter phone" onblur="validatePhone()">
+
+  <!-- Dropdown with onChange -->
+  <label for="eventSelect">Select Event:</label>
+  <select id="eventSelect" onchange="showFee()">
+    <option value="">Choose</option>
+    <option value="music">Music - $10</option>
+    <option value="food">Food - $15</option>
+    <option value="art">Art - $12</option>
+  </select>
+  <div id="feeDisplay"></div>
+
+  <!-- Submit Button with onClick -->
+  <button onclick="submitFeedback()">Submit Feedback</button>
+  <div id="confirmation"></div>
+
+  <!-- Image with ondblclick -->
+  <h3>Event Poster</h3>
+  <img src="event.jpg" alt="Event Poster" id="eventImage" ondblclick="enlargeImage(this)">
+
+  <script>
+    function validatePhone() {
+      const phone = document.getElementById("phone").value;
+      if (!/^\d{10}$/.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+      }
+    }
+
+    function showFee() {
+      const feeText = document.getElementById("eventSelect").selectedOptions[0].text;
+      document.getElementById("feeDisplay").textContent = "Fee: " + feeText.split(' - ')[1];
+    }
+
+    function submitFeedback() {
+      document.getElementById("confirmation").textContent = "Thank you for your feedback!";
+    }
+
+    function enlargeImage(img) {
+      img.style.transform = img.style.transform === "scale(1.5)" ? "scale(1)" : "scale(1.5)";
+    }
+  </script>
+
+</body>
+</html>
